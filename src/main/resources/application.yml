@@ -1,0 +1,21 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/weatherappdb
+    username: postgres
+    password: postgres
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+
+fixed:
+  rate:
+    milliseconds: 900000
